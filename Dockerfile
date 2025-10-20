@@ -30,7 +30,7 @@ COPY --from=build /app /app
 EXPOSE 8080
 
 # Fix permissions
-RUN chmod +x bin/flexiapi
+#RUN chmod +x bin/flexiapi
 
 # Run your CLI command
-CMD ["php", "bin/flexiapi", "serve", "--port=8080"]
+#CMD ["php", "bin/flexiapi", "serve", "--port=8080"]
