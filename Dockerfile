@@ -2,12 +2,12 @@
 FROM php:8.2-cli AS build
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-    libpng-dev libjpeg-dev libonig-dev libxml2-dev zip unzip git curl \
-    && docker-php-ext-install pdo pdo_mysql
+#RUN apt-get update && apt-get install -y \
+#    libpng-dev libjpeg-dev libonig-dev libxml2-dev zip unzip git curl \
+#    && docker-php-ext-install pdo pdo_mysql
 
 # Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+#COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Set working directory
 WORKDIR /app
@@ -16,7 +16,7 @@ WORKDIR /app
 COPY . .
 
 # Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+#RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
 # Stage 2: Run app
 FROM php:8.2-cli
@@ -24,7 +24,7 @@ FROM php:8.2-cli
 WORKDIR /app
 
 # Copy built files
-COPY --from=build /app /app
+#COPY --from=build /app /app
 
 # Expose API port
 EXPOSE 8080
