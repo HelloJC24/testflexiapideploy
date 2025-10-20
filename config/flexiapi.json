@@ -1,0 +1,50 @@
+{
+    "database": {
+        "host": "127.0.0.1",
+        "port": 3306,
+        "database": "",
+        "username": "",
+        "password": "",
+        "charset": "utf8mb4"
+    },
+    "auth": {
+        "secret_key": "6ffc5bd857ed901ec59ea92995dc437eb8207c5a023debc3895a8acce68fb456",
+        "token_expiration": 3600,
+        "algorithm": "HS256"
+    },
+    "rate_limiting": {
+        "enabled": true,
+        "requests_per_minute": 60,
+        "requests_per_hour": 1000
+    },
+    "encryption": {
+        "key": "56182c681543db717d05029dbe900e5b"
+    },
+    "endpoints": {
+        "users": {
+            "table": "users",
+            "columns": [
+                {
+                    "name": "Name",
+                    "type": "Name",
+                    "required": true,
+                    "unique": false
+                },
+                {
+                    "name": "Age",
+                    "type": "VARCHAR(255)",
+                    "required": false,
+                    "unique": false
+                },
+                {
+                    "name": "Gender",
+                    "type": "VARCHAR(255)",
+                    "required": false,
+                    "unique": false
+                }
+            ],
+            "created_at": "2025-10-18 08:08:01",
+            "controller": "UsersController"
+        }
+    }
+}

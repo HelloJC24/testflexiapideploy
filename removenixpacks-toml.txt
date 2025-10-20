@@ -1,0 +1,22 @@
+[build]
+builder = "nixpacks"
+plan = "php"
+
+[variables]
+NIXPACKS_PHP_VERSION = "8.2"
+
+[phases.setup]
+nixPkgs = [
+  "php82",
+  "php82Extensions.openssl",
+  "php82Extensions.pdo",
+  "php82Extensions.pdo_mysql",
+  "php82Packages.composer",
+  "libmysqlclient"
+]
+
+[phases.install]
+cmds = ["composer install --ignore-platform-reqs"]
+
+[start]
+cmd = "php -S 0.0.0.0:8080 -t public"
