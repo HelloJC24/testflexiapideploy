@@ -1,36 +1,23 @@
-# Stage 1: Build dependencies
-FROM php:8.2-cli AS build
-
-# Install dependencies
-#RUN apt-get update && apt-get install -y \
-#    libpng-dev libjpeg-dev libonig-dev libxml2-dev zip unzip git curl \
-#    && docker-php-ext-install pdo pdo_mysql
-
-# Install Composer
-#COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# Set working directory
-WORKDIR /
-
-# Copy source
-COPY . .
-
-# Install PHP dependencies
-#RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
-
-# Stage 2: Run app
+# Use the official PHP 8.2 image with Apache
 FROM php:8.2-cli
 
-WORKDIR /
+# Set working directory
+WORKDIR /app
 
-# Copy built files
-#COPY --from=build /app /app
+# Install PHP extensions (pdo_mysql and others)
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Expose API port
-EXPOSE 8080
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Fix permissions
-#RUN chmod +x bin/flexiapi
+# Copy app files
+COPY . .
 
-# Run your CLI command
-#CMD ["php", "bin/flexiapi", "serve", "--port=8080"]
+# Install dependencies
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+# Expose port 8080 for Dokploy or local use
+EXPOSE 8000
+
+# Start PHP built-in web server using the "public" folder as document root
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
