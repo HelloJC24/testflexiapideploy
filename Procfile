@@ -1,1 +1,1 @@
-web: php -S 0.0.0.0:8080 -t public/app
+web: php -S 0.0.0.0:$PORT -t public/app

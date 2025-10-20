@@ -7,7 +7,6 @@
 # Composer dependencies
 /vendor/
 composer.phar
-composer.lock
 
 # Composer cache
 .composer/
@@ -17,7 +16,6 @@ composer.lock
 # ================================
 
 # Database configuration (contains sensitive data)
-config/config.php
 config/database.php
 config/.env
 .env
@@ -36,8 +34,6 @@ config/keys.json
 
 # Generated endpoint files (exclude user-generated endpoints but keep framework source)
 # For framework development: Include source code but exclude user-generated dynamic content
-endpoints/*.php
-endpoints/*Routes.php
 !endpoints/.gitkeep
 
 # Generated SQL exports and schemas
