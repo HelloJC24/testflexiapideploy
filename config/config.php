@@ -2,11 +2,11 @@
 
 return [
     'database' => [
-        'host' => 'localhost',
+        'host' => 'upturabe-testdatabase-0rnctw',
         'port' => 3306,
-        'database' => 'testweb',
-        'username' => 'root',
-        'password' => '',
+        'database' => 'main_db',
+        'username' => 'JC',
+        'password' => '1233566',
         'charset' => 'utf8mb4'
     ],
     'jwt' => [
