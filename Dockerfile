@@ -38,4 +38,4 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 EXPOSE 8080
 
 # Start your API (if flexiapi serve is a CLI command)
-CMD ["php", "flexiapi", "serve"]
+CMD ["php", "bin/flexiapi", "serve", "--port=8080"]
