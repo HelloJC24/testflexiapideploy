@@ -10,7 +10,7 @@ FROM php:8.2-cli AS build
 #COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Set working directory
-WORKDIR /app
+WORKDIR /
 
 # Copy source
 COPY . .
@@ -21,7 +21,7 @@ COPY . .
 # Stage 2: Run app
 FROM php:8.2-cli
 
-WORKDIR /app
+WORKDIR /
 
 # Copy built files
 #COPY --from=build /app /app
