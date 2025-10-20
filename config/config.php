@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'database' => [
-        'host' => 'upturabe-testdatabase-0rnctw',
+   'database' => [
+        'host' => 'bngcbe-bngc-bpjv5k',
         'port' => 3306,
-        'database' => 'main_db',
-        'username' => 'JC',
-        'password' => '1233566',
+        'database' => 'bngc_db',
+        'username' => 'root',
+        'password' => 'bdaktwmfhpkauycf',
         'charset' => 'utf8mb4'
     ],
     'jwt' => [
