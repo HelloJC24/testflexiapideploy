@@ -2,7 +2,7 @@
 
 return [
    'database' => [
-        'host' => 'upturabe-testdatabase-0rnctw',
+        'host' => 'db',
         'port' => 3306,
         'database' => 'main_db',
         'username' => 'JC',
