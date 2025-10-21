@@ -2,11 +2,11 @@
 
 return [
    'database' => [
-        'host' => 'bngcbe-bngc-bpjv5k',
+        'host' => 'upturabe-testdatabase-0rnctw',
         'port' => 3306,
-        'database' => 'bngc_db',
-        'username' => 'root',
-        'password' => 'bdaktwmfhpkauycf',
+        'database' => 'main_db',
+        'username' => 'JC',
+        'password' => '1233566',
         'charset' => 'utf8mb4'
     ],
     'jwt' => [
